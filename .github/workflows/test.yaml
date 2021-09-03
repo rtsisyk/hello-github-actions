@@ -1,0 +1,21 @@
+name: Test
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  test
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        shell: bash
+        run: |
+           set -x
+           df -h
+           free -h
+           cat /proc/cpuinfo
+           cat /proc/meminfo
+           uname -a
+           ps axuf
+           
+    
